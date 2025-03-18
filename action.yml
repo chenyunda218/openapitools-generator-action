@@ -39,7 +39,9 @@ inputs:
   command-args:
     description: Optional, additional arguments to pass through to the generator.
     required: false
-
+  workspace-dir:
+    description: Optional, workspace directory.
+    required: false
 runs:
   using: composite
   steps:
