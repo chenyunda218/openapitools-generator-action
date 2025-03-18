@@ -7,7 +7,7 @@ from os import getenv, getuid
 if workspace_dir == "UNSET":
     workspace_dir = "/github/workspace"
     
-cmd = f"docker run -u {getuid()}:1001 --rm --workdir ${workspace_dir} -v {getenv('GITHUB_WORKSPACE')}:${workspace_dir}"
+cmd = f"docker run -u {getuid()}:1001 --rm --workdir ${workspace_dir} -v /var/run/act/workflow:${workspace_dir}"
 cmd = f"{cmd} {docker_repository}/{docker_image}:{generator_tag} generate"
 cmd = f"{cmd} -g {generator} -o ${workspace_dir}/{generator}-client"
 
