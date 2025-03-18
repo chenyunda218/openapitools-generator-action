@@ -42,6 +42,7 @@ inputs:
   workspace-dir:
     description: Optional, workspace directory.
     required: false
+    default: UNSET
 runs:
   using: composite
   steps:
